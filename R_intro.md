@@ -1,5 +1,5 @@
 # A gentle introduction to R
-*[Ashkan Mirzaee](https://ashki23.github.io/index.html) - December 2019*
+*[Ashkan Mirzaee](https://ashki23.github.io/index.html) - December 2018*
 
 [R](https://www.r-project.org/) is a free software environment for statistical computing and graphics. To use R we might use [RStudio](https://www.rstudio.com/), the most popular R IDE, or directly use R in a terminal. In both cases, we need to first download and install R from R webpage or from your favorite package manager (`apt`, `yum`, and etc.). In this article we will cover some fundamental syntax in R including operators, control flow commands, defining functions, reading and writing files, and installing and importing packages. 
 
