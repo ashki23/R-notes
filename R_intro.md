@@ -499,6 +499,7 @@ Packages are very important component of R. RStudio is a great IDE for R that pr
   - Gradient Boosting Machines (GBM): gbm
   - tree, Random forest and bagging: tree, randomForest
   - Support Vector Machine (SVM): e1071
+  - Generalized/mixed linear models: MASS, lme4, DHARMa, pscl
 
 ---
 Copyright 2018-2019, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
