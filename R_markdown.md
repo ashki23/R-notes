@@ -2,9 +2,7 @@
 # R Markdown
 *[Ashkan Mirzaee](https://ashki23.github.io/index.html) - December 2018*
 
-R Markdown is a file format for making dynamic HTML documents with R Studio. An R Markdown document is written in Markdown and could contain chunks of embedded source codes, LaTeX formula and graphics. A basic knowledge about Markdown and LaTeX is required to create HTML documents by R Markdown. This tutorial provides a quick reference of R Markdown features.
-
-You may review a tutorial in [here](https://ashki23.github.io/markdown_latex.html) to learn more about Markdown and LaTeX.
+[R Markdown](https://rmarkdown.rstudio.com) is a file format for making dynamic HTML documents with R Studio. An R Markdown document is written in Markdown and could contain chunks of embedded source codes, LaTeX formula and graphics. A basic knowledge about Markdown and LaTeX is required to create HTML documents by R Markdown. You may review a tutorial in [here](https://ashki23.github.io/markdown_latex.html) to learn more about Markdown and LaTeX. This tutorial only provides a quick reference of some R Markdown features.
 
 ## Code chunks
 In R Markdown, we can evaluate source codes such as R and Python. For example we can display and run the following R codes by inserting ` ```{program} `. For example:
