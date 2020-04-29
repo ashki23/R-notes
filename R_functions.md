@@ -3,14 +3,14 @@
 
 [R](https://www.r-project.org/) is a powerful tool for statistical learning, data analysis and graphics that includes numerous built-in functions. R is a very self explanatory environment in terms of documentation. We can learn about any R commands only by using `help(command)`. As a prerequisite, first review the following article:
 
-- [A gentle introduction to R](https://ashki23.github.io/r_intro.html)
+- [A gentle introduction to R](https://ashki23.github.io/r-intro.html)
 
 The following are also more resources to learn R programming:
 
 - [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
 - [Programming with R](http://swcarpentry.github.io/r-novice-inflammation/)
 - [R for Reproducible Scientific Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
-- [Basic graphics in R](https://ashki23.github.io/r_plots.html)
+- [Basic graphics in R](https://ashki23.github.io/r-plots.html)
 
 In this article, we will learn about some fundamental functions for data structures, date and time data, data mining, control flow and defining new functions.
 
