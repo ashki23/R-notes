@@ -1,5 +1,4 @@
 # Helpful functions in R
-*[Ashkan Mirzaee](https://ashki23.github.io/index.html) - December 2018*
 
 [R](https://www.r-project.org/) is a powerful tool for statistical learning, data analysis and graphics that includes numerous built-in functions. R is a very self explanatory environment in terms of documentation. We can learn about any R commands only by using `help(command)`. As a prerequisite, first review the following article:
 
