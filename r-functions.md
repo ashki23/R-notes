@@ -1,126 +1,152 @@
 # Helpful functions in R
+*[Ashkan Mirzaee](https://ashki23.github.io/index.html)*
 
-[R](https://www.r-project.org/) is a powerful tool for statistical learning, data analysis and graphics that includes numerous built-in functions. R is a very self explanatory environment in terms of documentation. We can learn about any R commands only by using `help(command)`. As a prerequisite, first review the following article:
+[R](https://www.r-project.org/) is a powerful tool for statistical
+learning, data analysis and graphics that includes numerous built-in
+functions. R is a very self explanatory environment in terms of
+documentation. We can learn about any R commands only by using
+`help(command)`. As a prerequisite, first review the following article:
 
-- [A gentle introduction to R](https://ashki23.github.io/r-intro.html)
+  - [A gentle introduction to R](https://ashki23.github.io/r-intro.html)
 
 The following are also more resources to learn R programming:
 
-- [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
-- [Programming with R](http://swcarpentry.github.io/r-novice-inflammation/)
-- [R for Reproducible Scientific Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
-- [Basic graphics in R](https://ashki23.github.io/r-plots.html)
+  - [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
+  - [Programming with
+    R](http://swcarpentry.github.io/r-novice-inflammation/)
+  - [R for Reproducible Scientific
+    Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+  - [A gentle introduction to R](https://ashki23.github.io/r-intro.html)
+  - [Basic graphics in R](https://ashki23.github.io/r-plots.html)
 
-In this article, we will learn about some fundamental functions for data structures, date and time data, data mining, control flow and defining new functions.
+In this article we will learn more about R built-in functions related to
+calculus, matrix operations, summary statistics and regular expressions.
 
----
+-----
 
-## Date and time
-There are several functions to work with date and time classes, following are some examples of these functions.  
+## Shell-like commands
 
-```r
-Sys.time()
-## [1] "2020-02-12 21:47:43 CST"
+  - List of objects: `ls()`
+  - Remove an object: `rm(object)`
+  - Remove all objects: `rm(list = ls())`
+  - List the files in a directory: `dir()`, `dir(path = ".", pattern)`
+  - Working directory: `getwd()`
+  - Set working directory: `setwd("new/dir")`
+  - Running shell commands: `system("command")`
 
-d = Sys.Date()
-d
-## [1] "2020-02-12"
+## Statistical functions
 
-weekdays(d)
-## [1] "Wednesday"
+R is one of the best application statistical analysis and natively
+supports many advanced statistical methods. The following show some of
+these functions:
 
-months(d)
-## [1] "February"
+  - Basic stats: `mean`, `median`, `sd`, `var`, `cov`, `cor`, `quantile`
+  - Probability functions
+      - Density functions (ddist): `dnorm`, `dchisq`, `dt`, `df`
+      - Cumulative distribution functions (pdist): `pgamma`, `pbeta`,
+        `pexp`
+      - Quantile functions (qdist): `qpois`, `qunif`, `qbinom`
+      - Random numbers (rdist) : `runif`, `rlogis`, `rlnorm`
+  - Regression analysis
+      - Linear models: `lm`
+      - Generalized linear models: `glm`
+      - Nonlinear models: `nls`
+  - Analysis of varience: `anova`
+  - Multivariate aalysis of varience: `manova`
+  - Confidence intervals: `confint`
+  - t-test: `t.test`
+  - principal components: `prcomp`
 
-quarters(d)
-## [1] "Q1"
+## Computational functions
 
-format(Sys.time(), "%d")
-## [1] "12"
+R provides an abundance of computational functions, such as:
 
-format(Sys.time(), "%m")
-## [1] "02"
+  - Cumulative: `cumsum`, `cumprod`, `colSums`, `rowSums`
+  - Finding min/mix: `which.min`, `which.max`
+  - Mapping: `apply`
+  - Normalizing: `scale`
+  - Sampling: `sample`
 
-format(Sys.time(), "%Y")
-## [1] "2020"
+The following are some examples of these functions:
 
-timestamp()
-## ##------ Wed Feb 12 21:47:43 2020 ------##
+``` r
+# Cumulative sums, products
+cumsum(1:5)
+## [1]  1  3  6 10 15
 
-format(Sys.time(), "%a %b %d %Y %X") # To see more options for format enter `help(strftime)`
-## [1] "Wed Feb 12 2020 21:47:43"
+cumprod(1:5)
+## [1]   1   2   6  24 120
 
-format(Sys.time(), "%Y-%m-%d")
-## [1] "2020-02-12"
+set.seed(23)
+mydata = data.frame(sample = sample(1:100, 5), random = rnorm(5))
+mydata
+##   sample     random
+## 1     29  2.7075823
+## 2     28  0.5284939
+## 3     72 -0.4823752
+## 4     43 -1.0835666
+## 5     45  0.2366887
 
-format(Sys.time(), "%H:%M:%S")
-## [1] "21:47:43"
-
-weeks = seq(Sys.Date(), length.out = 3, by = "1 week") # Next three weeks
-weeks
-## [1] "2020-02-12" "2020-02-19" "2020-02-26"
-
-difftime(weeks[2], weeks[1], units = "auto")
-## Time difference of 7 days
-
-# Date-time conversion
-strftime(Sys.time(), format = "%a %d %b %Y %H:%M:%S") # convert time-date objects to character
-## [1] "Wed 12 Feb 2020 21:47:43"
-
-strptime("20/2/06 11:16:16.683", format = "%d/%m/%y %H:%M:%OS") # convert character to time-date objects
-## [1] "2006-02-20 11:16:16 CST"
-```
-
-`ts` function can be used to create a vector or matrix of **time-series** objects.
-
-```r
-ts(1:12, start = c(1956, 3), frequency = 12) # for season: frequency = 4
-##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
-## 1956           1   2   3   4   5   6   7   8   9  10
-## 1957  11  12
-```
-
-## Differentiation and integration
-R base system supports both differentiation and integration, for instance:
-```r
-## Derivative
-f = expression(x^2+3*x)
-ff = D(f, "x")
-ff
-## 2 * x + 3
-
-x = 2 
-eval(ff) # to find the answer for x = 2 
-## [1] 7
-
-D(ff, "x") # to find the second derivate
+# Which min/max
+which.min(mydata$sample)
 ## [1] 2
 
-## Integrate
-f = function(x) x^2+3*x
-integrate(f, lower = 0, upper = 1)
-## 1.833333 with absolute error < 2e-14
+which.max(mydata$sample)
+## [1] 3
+
+# Apply
+apply(mydata , 2, quantile) # Calculate quantile
+##      sample     random
+## 0%       28 -1.0835666
+## 25%      29 -0.4823752
+## 50%      43  0.2366887
+## 75%      45  0.5284939
+## 100%     72  2.7075823
+
+apply(mydata, 2, mean) # Calculate mean
+##     sample     random 
+## 43.4000000  0.3813646
+
+colMeans(mydata)
+##     sample     random 
+## 43.4000000  0.3813646
+
+scale(mydata) # scale(x) = (x - mean(x)) / sd(x)
+##           sample     random
+## [1,] -0.80967904  1.6104335
+## [2,] -0.86590675  0.1018572
+## [3,]  1.60811253 -0.5979645
+## [4,] -0.02249108 -1.0141675
+## [5,]  0.08996434 -0.1001587
+## attr(,"scaled:center")
+##     sample     random 
+## 43.4000000  0.3813646 
+## attr(,"scaled:scale")
+##    sample    random 
+## 17.784825  1.444467
 ```
 
 ## Matrix operations
+
 The most common matrix operations include:
 
-- Dimensions of a matrix: `dim()`
-- Diagonal of a matrix: `diag()`
-- Identity matrix: `diag(number)`
-- Matrix symmetric test: `isSymmetric()`
-- Matrix multiplication: `%*%`
-- Test matrices for exact equality: `identical(,)`
-- Matrix transpose: `t()`
-- Determinant of a matrix: `det()`
-- Inverse of a matrix: `solve()`
-- Solve a system of equations: `solve()`
-- QR Decomposition of a Matrix: `qr()`
-- Spectral Decomposition of a Matrix: `eigen()`
+  - Dimensions of a matrix: `dim`
+  - Diagonal of a matrix: `diag`
+  - Identity matrix: `diag(number)`
+  - Matrix diagonal: `Diagonal`
+  - Matrix symmetric test: `isSymmetric`
+  - Matrix multiplication: `%*%`
+  - Test matrices for exact equality: `identical`
+  - Matrix transpose: `t`
+  - Determinant of a matrix: `det`
+  - Inverse of a matrix: `solve`
+  - Solve a system of equations: `solve`
+  - QR Decomposition of a Matrix: `qr`
+  - Spectral Decomposition of a Matrix: `eigen`
 
 The following are some examples of above functions.
 
-```r
+``` r
 M = matrix(c(4,4,-2,2,6,2,2,8,4), 3, 3)
 N = matrix(c(3,2,1,0,1,-2,4,5,6), 3, 3)
 b = matrix(c(0,0,1))
@@ -136,6 +162,12 @@ diag(3)
 ## [1,]    1    0    0
 ## [2,]    0    1    0
 ## [3,]    0    0    1
+
+Matrix::Diagonal(3, c(.1,.2,.3))
+##      [,1] [,2] [,3]
+## [1,]  0.1    .    .
+## [2,]    .  0.2    .
+## [3,]    .    .  0.3
 
 isSymmetric(M)
 ## [1] FALSE
@@ -201,70 +233,101 @@ eigen(M)
 ## [3,] 0.1840605  0.4540313  0.5247494
 ```
 
-## Computational functions
-R provides an abundance of computational functions. The following are some examples of these functions. 
+## Differentiation and integration
 
-```r
-# Cumulative sums, products
-cumsum(1:5)
-## [1]  1  3  6 10 15
+R base system supports both differentiation and integration with:
 
-cumprod(1:5)
-## [1]   1   2   6  24 120
+  - Derivative: `D(function, "wrt")`
+  - Integrate: `integrate(function, lower, upper)`
 
-set.seed(23)
-mydata = data.frame(sample = sample(1:100, 5), random = rnorm(5))
-mydata
-##   sample     random
-## 1     29  2.7075823
-## 2     28  0.5284939
-## 3     72 -0.4823752
-## 4     43 -1.0835666
-## 5     45  0.2366887
+For instance:
 
-# Which min/max
-which.min(mydata$sample)
+``` r
+## Derivative
+f = expression(x^2+3*x)
+ff = D(f, "x")
+ff
+## 2 * x + 3
+
+x = 2 
+eval(ff) # to find the answer for x = 2 
+## [1] 7
+
+D(ff, "x") # to find the second derivate
 ## [1] 2
 
-which.max(mydata$sample)
-## [1] 3
+## Integrate
+f = function(x) x^2+3*x
+integrate(f, lower = 0, upper = 1)
+## 1.833333 with absolute error < 2e-14
+```
 
-# Apply
-apply(mydata , 2, quantile) # Calculate quantile
-##      sample     random
-## 0%       28 -1.0835666
-## 25%      29 -0.4823752
-## 50%      43  0.2366887
-## 75%      45  0.5284939
-## 100%     72  2.7075823
+## Date and time
 
-apply(mydata, 2, mean) # Calculate mean
-##     sample     random 
-## 43.4000000  0.3813646
+There are several functions to work with date and time classes such as:
 
-colMeans(mydata)
-##     sample     random 
-## 43.4000000  0.3813646
+  - Current time and data: `Sys.time`, `Sys.Date`, `timestamp`
+  - Date information: `weekdays`, `month`, `quarters`
+  - Time formats: `%a %b %d %Y %X %H %M %S`. Use `help(strftime)` to see
+    all formats
+  - Time difference: `difftime`
+  - Time sequences: `seq`
+  - Date-time conversion: `strftime`
+  - Time-series: `ts`
 
-scale(mydata) # scale(x) = (x - mean(x)) / sd(x)
-##           sample     random
-## [1,] -0.80967904  1.6104335
-## [2,] -0.86590675  0.1018572
-## [3,]  1.60811253 -0.5979645
-## [4,] -0.02249108 -1.0141675
-## [5,]  0.08996434 -0.1001587
-## attr(,"scaled:center")
-##     sample     random 
-## 43.4000000  0.3813646 
-## attr(,"scaled:scale")
-##    sample    random 
-## 17.784825  1.444467
+For example:
+
+``` r
+timestamp()
+##------ Wed Feb 12 21:47:43 2020 ------##
+
+Sys.time()
+## [1] "2020-02-12 21:47:43 CST"
+
+d = Sys.Date()
+## [1] "2020-02-12"
+
+weekdays(d)
+## [1] "Wednesday"
+
+format(Sys.time(), "%Y-%m-%d")
+## [1] "2020-02-12"
+
+format(Sys.time(), "%a %b %d %Y %X")
+## [1] "Wed Feb 12 2020 21:47:43"
+
+format(Sys.time(), "%H:%M:%S")
+## [1] "21:47:43"
+
+seq(Sys.Date(), length = 3, by = "1 week") # Next three weeks
+## [1] "2020-02-12" "2020-02-19" "2020-02-26"
+
+difftime("2020-02-26", "2020-02-12", units = "auto")
+## Time difference of 14 days
+
+# Date-time conversion
+strptime("20/2/06 11:16:16.683", format = "%d/%m/%y %H:%M:%OS") # convert character to time-date objects
+## [1] "2006-02-20 11:16:16 CST"
+```
+
+`ts` function can be used to create a vector or matrix of
+**time-series** objects.
+
+``` r
+ts(1:12, start = c(1956, 3), frequency = 12) # for season: frequency = 4
+##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+## 1956           1   2   3   4   5   6   7   8   9  10
+## 1957  11  12
 ```
 
 ## Summary statistics
-`aggregate` function splits the data into subsets, computes summary statistics for each, and returns the result in a convenient form. `table` uses the cross-classifying factors to build a contingency table of the counts at each combination of factor levels.
 
-```r
+`aggregate` function splits the data into subsets, computes summary
+statistics for each, and returns the result in a convenient form.
+`table` uses the cross-classifying factors to build a contingency table
+of the counts at each combination of factor levels.
+
+``` r
 head(warpbreaks)
 ##   breaks wool tension
 ## 1     26    A       L
@@ -343,14 +406,19 @@ symnum(cor(mtcars))
 ```
 
 ## Split and merge data
-`split` function divides the data into a list of defined groups. `merge` function merge two data frames by common columns or row names. `merge` is similar to `JOIN` in SQL:
 
-- Inner join: `merge(x, y, by)`
-- Left join: `merge(x, y, by, all.x = T)`
-- Right join: `merge(x, y, by, all.y = T)`
-- Outer join: `merge(x, y, by, all = T)`
+`split` function divides the data into a list of defined groups. `merge`
+function merge two data frames by common columns or row names. `merge`
+is similar to `JOIN` in SQL:
 
-```r
+  - Inner join: `merge(x, y, by)`
+  - Left join: `merge(x, y, by, all.x = T)`
+  - Right join: `merge(x, y, by, all.y = T)`
+  - Outer join: `merge(x, y, by, all = T)`
+
+<!-- end list -->
+
+``` r
 data = expand.grid(meat = c("grade-1","grade-2","grade-3"), food = c("burger", "steak", "pizza"))
 data$value = round(rnorm(nrow(data)), 2)
 data
@@ -421,10 +489,17 @@ merge(x, y, by = "ID", all = TRUE) # Full outer join
 ## 6  6  Mobile   China
 ```
 
-## Regular expressions 
-[Regular expressions](https://en.wikipedia.org/wiki/Regular_expression) (regex) are a simple way to find patterns in text. The most common functions implementing regex in R are in the **global regular expression print** (`grep`) family. For more information see `help("regex")` and `help(grep)`. Learn more about regex functions in R at [D-RUG](https://d-rug.github.io/blog/2015/regex.fick). Following are some simple examples. 
+## Regular expressions
 
-```r
+[Regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
+(regex) are a simple way to find patterns in text. The most common
+functions implementing regex in R are in the **global regular expression
+print** (`grep`) family. For more information see `help("regex")` and
+`help(grep)`. Learn more about regex functions in R at
+[D-RUG](https://d-rug.github.io/blog/2015/regex.fick). Following are
+some simple examples.
+
+``` r
 sub("a", "#", "abcdfa") # Substitution: substitue first "a" in the expression "abcdfa" with "#" 
 ## [1] "#bcdfa"
 
@@ -459,7 +534,6 @@ grepl("[J-j]ojo", "my name is Jojo") # True if "Jojo" or "jojo" is in the text
 ## [1] TRUE
 
 pattern = "(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})"
-
 grep(pattern, "888-555-7766", value = TRUE)
 ## [1] "888-555-7766"
 
@@ -468,10 +542,10 @@ regmatches("888-555-7766", r)
 ## [[1]]
 ## [1] "888-555-7766" "888"          "555"          "7766"
 
-list.files(path = "./files", pattern = "*.pdf$") # List of "pdf" files in a directory
-## [1] "Ashkan_Mirzaee_CV_Fall2019.pdf"   "Ashkan_Mirzaee_CV_Spring2020.pdf"
-## [3] "CV_01_2019.pdf"
+list.files(path = "./doc", pattern = "*.pdf$") # List of "pdf" files in "doc" directory
+## [1] "file1.pdf"   "file2.pdf"
 ```
 
 ---
+
 Copyright 2018-2019, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
