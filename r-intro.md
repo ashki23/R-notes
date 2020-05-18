@@ -105,17 +105,19 @@ also can **concatenate**.
 
 ``` r
 # Vectors
-c(1:3,7) # all int 
-## [1] 1 2 3 7
+c1 = c(1:3,7) # all int 
+typeof(c1)
+## [1] "double"
 
-1:3 # sequnces are vector
-## [1] 1 2 3
+str(c1) # structure of c1
+## num [1:4] 1 2 3 7
 
-seq(1,3) # sequnces are vector
-## [1] 1 2 3
+c2 = c(1:3,'a',7) # all str
+typeof(c2)
+## [1] "character"
 
-c(1:3,'a',7) # all str
-## [1] "1" "2" "3" "a" "7"
+str(c2)
+##chr [1:5] "1" "2" "3" "a" "7"
 
 letter = c('a','b','c','d')
 letter[1] # first element
@@ -125,7 +127,6 @@ letter[1:3] # elements 1 to 3
 ## [1] "a" "b" "c"
 
 letter[4] = 'z' # mutable
-
 letter
 ## [1] "a" "b" "c" "z"
 
@@ -142,6 +143,12 @@ mm
 ## [1,]    1    3    5    7
 ## [2,]    2    4    6    8
 
+typeof(mm)
+## [1] "integer"
+
+str(mm)
+## int [1:2, 1:4] 1 2 3 4 5 6 7 8
+
 mm[1,2] # row 1 col 2
 ## [1] 3
 
@@ -151,13 +158,6 @@ mm
 ## [1,]    1    3    5    7
 ## [2,]    2    4    6  100
 
-## Cannot concatenate
-## mm[,5] = c(101,102) # error 
-
-matrix(c('a',1, 'b'), 1)
-##      [,1] [,2] [,3]
-## [1,] "a"  "1"  "b"
-
 ## Dataframes
 df = data.frame(col1 = 1:3, col2 = letters[1:3], col3 = 31:33)
 df
@@ -165,6 +165,15 @@ df
 ## 1    1    a   31
 ## 2    2    b   32
 ## 3    3    c   33
+
+typeof(df)
+## [1] "list"
+
+str(df)
+## 'data.frame':    3 obs. of  3 variables:
+##  $ col1: int  1 2 3
+##  $ col2: Factor w/ 3 levels "a","b","c": 1 2 3
+##  $ col3: int  31 32 33
 
 df$col1 # column col1
 ## [1] 1 2 3
@@ -186,13 +195,6 @@ df
 ## 2    2    b   32
 ## 3    3    c   33
 
-df$col3[3] = 500 # mutable
-df
-##   col1 col2 col3
-## 1  100    a   31
-## 2    2    b   32
-## 3    3    c  500
-
 df$col4 = c(103,102,101) # concatenate
 df
 ##   col1 col2 col3 col4
@@ -202,77 +204,36 @@ df
 
 ## Lists
 ls = list(x = 11:15, y = 1:7)
-ls
-## $x
-## [1] 11 12 13 14 15
-## 
-## $y
-## [1] 1 2 3 4 5 6 7
+typeof(ls)
+## "list"
 
-ls$x
-## [1] 11 12 13 14 15
+str(ls)
+## List of 2
+##  $ x: int [1:5] 11 12 13 14 15
+##  $ y: int [1:7] 1 2 3 4 5 6 7
 
-ls[1]
-## $x
-## [1] 11 12 13 14 15
-
-ls[[2]][7] # or ls$y[7]
+ls$y[7] # or ls[[2]][7]
 ## [1] 7
 
-ls[[2]][8] = 80 # concatenate or ls$y[8] = 80
-ls
-## $x
-## [1] 11 12 13 14 15
-## 
-## $y
+ls$y[8] = 80 # concatenate
+ls$y
 ## [1]  1  2  3  4  5  6  7 80
 
-ls$z = "this is a new component"
-ls
-## $x
-## [1] 11 12 13 14 15
-## 
-## $y
-## [1]  1  2  3  4  5  6  7 80
-## 
-## $z
-## [1] "this is a new component"
-
-empty_list = vector("list", 2) # make an empty list
-names(empty_list) <- paste("list", 1:2, sep = "_") # rename the list
-empty_list
-## $list_1
-## NULL
-## 
-## $list_2
-## NULL
+mpty_list = vector("list", 2) # make an empty list
+names(empty_list) = paste("list", 1:2, sep = "_") # rename the list
 ```
 
 Note that not only we can select by indexing the objects, but also we
 can **remove** entries. For instance:
 
 ``` r
-letter # remove 4th element
-## [1] "a" "b" "c" "z"
-
-letter[-4] 
+letter[-4] # remove 4th element 
 ## [1] "a" "b" "c"
-
-mm
-##      [,1] [,2] [,3] [,4]
-## [1,]    1    3    5    7
-## [2,]    2    4    6  100
 
 mm[,c(-2,-3)] # remove column 2,3
 ##      [,1] [,2]
 ## [1,]    1    7
 ## [2,]    2  100
-
-df
-##   col1 col2 col3 col4
-## 1  100    a   31  103
-## 2    2    b   32  102
-## 3    3    c  500  101
 
 df = df[,-4] # remove 4th col
 df
@@ -280,31 +241,12 @@ df
 ## 1  100    a   31
 ## 2    2    b   32
 ## 3    3    c  500
-
-ls
-## $x
-## [1] 11 12 13 14 15
-## 
-## $y
-## [1]  1  2  3  4  5  6  7 80
-## 
-## $z
-## [1] "this is a new component"
-
-ls[-1] # remove 1st component (x)
-## [1] 1 2 3 4 5 6 7
 ```
 
 And since most of R data structures are **subscriptable**, we can easily
 **filter** them as well. For example:
 
 ``` r
-df
-##   col1 col2 col3
-## 1  100    a   31
-## 2    2    b   32
-## 3    3    c  500
-
 ## Let's select rows when:
 df[df$col1 < 100,] # col1 < 100
 ##   col1 col2 col3
@@ -353,6 +295,20 @@ df
 ## 2    0    b   32
 ## 3    0    c  500
 ```
+
+### Conversion
+
+We can use the following commands to convert main R objects to other
+types:
+
+  - `as.numeric`
+  - `as.integer`
+  - `as.character`
+  - `as.matrix`
+  - `as.data.frame`
+  - `as.list`
+  - `as.Date`
+  - `as.factor`
 
 ## Control flow tools
 
@@ -419,7 +375,7 @@ for (i in a) {
 
 By using `function` command we can define our own functions in R. For
 instance, lets define function \(\Delta = b^2 - 4ac\) and find the
-solution for `a = 2`, `b = 3` and `c = 4`:
+solution for \(a = 2\), \(b = 3\) and \(c = 4\):
 
 ``` r
 # Delta
@@ -540,7 +496,7 @@ include:
   - Interface to Python: `reticulate`
   - JSON objects: `rjson`
   - Statistical learning:
-      - LDA and QDA: `MASS`
+      - Linear/quadratic discriminant analysis (LDA/QDA): `MASS`
       - k-nearest neighbors (KNN): `class`
       - Bootstrapping: `boot`
       - Ridge and LASSO: `glmnet`

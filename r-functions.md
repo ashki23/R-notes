@@ -29,10 +29,12 @@ calculus, matrix operations, summary statistics and regular expressions.
   - List of objects: `ls()`
   - Remove an object: `rm(object)`
   - Remove all objects: `rm(list = ls())`
-  - List the files in a directory: `dir()`, `dir(path = ".", pattern)`
-  - Working directory: `getwd()`
-  - Set working directory: `setwd("new/dir")`
-  - Running shell commands: `system("command")`
+  - List the files in a directory: `dir()`, `dir(path, pattern)`
+  - Get working directory: `getwd()`
+  - Set working directory: `setwd("path")`
+  - Get environmental variables: `Sys.getenv("ENV")`
+  - Set environmental variables: `Sys.setenv(ENV = "path")`
+  - Running shell commands: `system("command", intern = TRUE)`
 
 ## Statistical functions
 
@@ -61,6 +63,8 @@ these functions:
 
 R provides an abundance of computational functions, such as:
 
+  - Counting: `nrow`, `ncol`, `length`
+  - Ordinal and sequential: `sort`, `order`, `seq`
   - Cumulative: `cumsum`, `cumprod`, `colSums`, `rowSums`
   - Finding min/mix: `which.min`, `which.max`
   - Mapping: `apply`
@@ -112,18 +116,6 @@ colMeans(mydata)
 ## 43.4000000  0.3813646
 
 scale(mydata) # scale(x) = (x - mean(x)) / sd(x)
-##           sample     random
-## [1,] -0.80967904  1.6104335
-## [2,] -0.86590675  0.1018572
-## [3,]  1.60811253 -0.5979645
-## [4,] -0.02249108 -1.0141675
-## [5,]  0.08996434 -0.1001587
-## attr(,"scaled:center")
-##     sample     random 
-## 43.4000000  0.3813646 
-## attr(,"scaled:scale")
-##    sample    random 
-## 17.784825  1.444467
 ```
 
 ## Matrix operations
@@ -363,16 +355,9 @@ aggregate(cbind(Ozone, Temp) ~ Month, data = airquality, mean)
 ## 4     8 59.96154 83.96154
 ## 5     9 31.44828 76.89655
 
-# Finding frequency
-letter = c('d','b','c','d','a','d','a', 'c')
-fr = data.frame(table(letter))
-fr
-##   letter Freq
-## 1      a    2
-## 2      b    1
-## 3      c    2
-## 4      d    3
-
+# Table of frequencies
+letters = c('d','b','c','d','a','d','a', 'c')
+fr = data.frame(table(letters))
 fr[order(fr$Freq, decreasing = TRUE),]
 ##   letter Freq
 ## 4      d    3
