@@ -490,7 +490,7 @@ include:
 
   - Documentation: `rmarkdown`, `kintr`, `kableExtra`
   - Web application: `shiny`
-  - Plot: `ggplot2`
+  - Plot: `lattice`, `ggplot2`
   - GIS: `sf`, `maps`, `leaflet`
   - Bayesian analysis: `R2OpenBUGS`, `RStan` (need openBUGS and Stan)
   - Interface to Python: `reticulate`
