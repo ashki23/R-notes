@@ -12,8 +12,8 @@ and an overview of R packages.
 
 You may find more about plotting and programming in R at:
 
-  - [Basic graphics in R](https://ashki23.github.io/r-plots.html)
-  - [Helpful functions in R](https://ashki23.github.io/r-functions.html)
+  - [Basic graphics in R](r-plots.html)
+  - [Helpful functions in R](r-functions.html)
   - [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
   - [Programming with
     R](http://swcarpentry.github.io/r-novice-inflammation/)

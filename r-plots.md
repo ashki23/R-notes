@@ -4,9 +4,22 @@
 [R](https://www.r-project.org/) is a great tool for creating plots, maps
 and graphics. R includes many built-in graphics functions that would
 help to draw plots easily. R is a very self explanatory environment in
-terms of documentation. We can learn about any R commands only by using
-`help(command)`. The following is a list of the most practical graphics
-functions in R:
+terms of documentation.
+
+You may find more about R programming in:
+
+  - [A gentle introduction to R](r-intro.html)
+  - [Helpful functions in R](r-functions.html)
+  - [Programming with
+    R](http://swcarpentry.github.io/r-novice-inflammation/)
+  - [R for Reproducible Scientific
+    Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+
+-----
+
+## Functions
+
+The following is a list of the most practical graphics functions in R:
 
   - `plot`: Generic function for plotting of R objects
   - `lines`: A generic function taking coordinates and joining the

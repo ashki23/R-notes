@@ -3,11 +3,15 @@
 
 [R](https://www.r-project.org/) is a powerful tool for statistical
 learning, data analysis and graphics that includes numerous built-in
-functions. R is a very self explanatory environment in terms of
+functions. R is a very self explanatory software in terms of
 documentation. We can learn about any R commands only by using
-`help(command)`. As a prerequisite, first review the following article:
+`help(command)` in R. In this article, generally we will learn more
+about R built-in functions related to calculus, matrix operations,
+summary statistics and regular expressions.
 
-  - [A gentle introduction to R](https://ashki23.github.io/r-intro.html)
+As a prerequisite, first review the following article:
+
+  - [A gentle introduction to R](r-intro.html)
 
 The following are also more resources to learn R programming:
 
@@ -16,11 +20,8 @@ The following are also more resources to learn R programming:
     R](http://swcarpentry.github.io/r-novice-inflammation/)
   - [R for Reproducible Scientific
     Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
-  - [A gentle introduction to R](https://ashki23.github.io/r-intro.html)
-  - [Basic graphics in R](https://ashki23.github.io/r-plots.html)
-
-In this article we will learn more about R built-in functions related to
-calculus, matrix operations, summary statistics and regular expressions.
+  - [A gentle introduction to R](r-intro.html)
+  - [Basic graphics in R](r-plots.html)
 
 -----
 
