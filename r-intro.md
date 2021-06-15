@@ -5,16 +5,20 @@
 statistical computing and graphics. To use R we might use
 [RStudio](https://www.rstudio.com/), the most popular R IDE, or directly
 use R in a terminal. In both cases, we need to first download and
-install R from R webpage or from your favorite package manager (`apt`,
-`yum`, and etc.). In this article we will learn some fundamental syntax
-in R including data structures and operators, control flows, functions,
-and an overview of R packages.
+install R. To install R we can create a virtual environment by
+[conda](python-env.html#miniconda) or directly download R [source
+code](https://mirror.las.iastate.edu/CRAN/) or use a Linux package
+manager (`apt`, `yum`, and etc.). In this article we will learn some
+fundamental syntax in R including data structures and operators, control
+flows, functions, and an overview of R packages.
 
 You may find more about plotting and programming in R at:
 
   - [Basic graphics in R](r-plots.html)
   - [Helpful functions in R](r-functions.html)
   - [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
+  - [R Language
+    Definition](https://cran.r-project.org/doc/manuals/R-lang.html)
   - [Programming with
     R](http://swcarpentry.github.io/r-novice-inflammation/)
   - [R for Reproducible Scientific
@@ -181,6 +185,12 @@ df$col1 # column col1
 df[,1] # column 1
 ## [1] 1 2 3
 
+df[,"col1"] # column 1
+## [1] 1 2 3
+
+df[["col1"]]
+## [1] 1 2 3
+
 df[1,] # row 1
 ##   col1 col2 col3
 ## 1    1    a   31
@@ -335,7 +345,7 @@ if (n == 7) {
 }
 ## [1] "n is greater than 7"
 
-n = 7  
+n = 7
 while (n < 10) {
   print(n)
   n = n + 1 
@@ -364,7 +374,7 @@ print(mysum)
 a = 1:2
 b = 1:2
 for (i in a) {
-  stopifnot(all.equal(a,b)) # if all are not TRUE then stop  
+  stopifnot(all.equal(a,b)) # if all are not TRUE then stop
   cat("'a' and 'b' both are equal to: ", i,"\n")
 }
 ## 'a' and 'b' both are equal to:  1 
@@ -396,7 +406,7 @@ norm(1:4)
 ## [1,] 5.477226
 
 # Square
-square = function(x) return (x * x)
+square = function(x) return(x * x)
 square(2)
 ## [1] 4
 
@@ -405,7 +415,7 @@ fact_iter = function(n) {
   p = 1
   for (i in 1:n) {
      p = p * i # Not recursive 
-  }  
+  }
   return(p)
 } 
 fact_iter(8)
