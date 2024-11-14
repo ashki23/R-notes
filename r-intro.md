@@ -1,5 +1,4 @@
 # A gentle introduction to R
-*[Ashkan Mirzaee](https://ashki23.github.io/index.html)*
 
 [R](https://www.r-project.org/) is a free software environment for
 statistical computing and graphics. To use R we might use
@@ -14,31 +13,31 @@ flows, functions, and an overview of R packages.
 
 You may find more about plotting and programming in R at:
 
-  - [Basic graphics in R](r-plots.html)
-  - [Helpful functions in R](r-functions.html)
-  - [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
-  - [R Language
-    Definition](https://cran.r-project.org/doc/manuals/R-lang.html)
-  - [Programming with
-    R](http://swcarpentry.github.io/r-novice-inflammation/)
-  - [R for Reproducible Scientific
-    Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+- [Basic graphics in R](r-plots.html)
+- [Helpful functions in R](r-functions.html)
+- [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
+- [R Language
+  Definition](https://cran.r-project.org/doc/manuals/R-lang.html)
+- [Programming with
+  R](http://swcarpentry.github.io/r-novice-inflammation/)
+- [R for Reproducible Scientific
+  Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
 
------
+------------------------------------------------------------------------
 
 ## Operators
 
 R operators include:
 
-  - Arithmetic: `+`, `-`, `*`, `/`, `^`, `% any arithmetic operarors %`
-  - Negation: `!`
-  - Indexing: `[`, `[[`
-  - Sequence operator: `:`
-  - Component/slot extraction: `$`, `@`
-  - Logical (and/or): `&`, `&&`, `|`, `||`
-  - Membership: `%in%`
-  - Assignment: `=`, `<-`, `->`
-  - Ordering and comparison: `<`, `>`, `<=`, `>=`, `==`, `!=`
+- Arithmetic: `+`, `-`, `*`, `/`, `^`, `% any arithmetic operarors %`
+- Negation: `!`
+- Indexing: `[`, `[[`
+- Sequence operator: `:`
+- Component/slot extraction: `$`, `@`
+- Logical (and/or): `&`, `&&`, `|`, `||`
+- Membership: `%in%`
+- Assignment: `=`, `<-`, `->`
+- Ordering and comparison: `<`, `>`, `<=`, `>=`, `==`, `!=`
 
 For example:
 
@@ -74,10 +73,10 @@ A %*% A  # Matrix multiplication
 
 There are four major data structures in R:
 
-  - Vectors: `c`
-  - Matrices: `matrix`
-  - Data frames: `data.frame`
-  - Lists: `list`
+- Vectors: `c`
+- Matrices: `matrix`
+- Data frames: `data.frame`
+- Lists: `list`
 
 **Vectors** are generating by `c` command which combines values into a
 vector. Vectors are **subscriptable** and **mutable** objects that can
@@ -311,26 +310,26 @@ df
 We can use the following commands to convert main R objects to other
 types:
 
-  - `as.numeric`
-  - `as.integer`
-  - `as.character`
-  - `as.matrix`
-  - `as.data.frame`
-  - `as.list`
-  - `as.Date`
-  - `as.factor`
+- `as.numeric`
+- `as.integer`
+- `as.character`
+- `as.matrix`
+- `as.data.frame`
+- `as.list`
+- `as.Date`
+- `as.factor`
 
 ## Control flow tools
 
 These statements allow us to control flow of the R script. The most
 common control statements include:
 
-  - if, else
-  - for
-  - while
-  - break
-  - return
-  - repeat
+- if, else
+- for
+- while
+- break
+- return
+- repeat
 
 The following are some simple examples of using these statements in R.
 
@@ -384,8 +383,8 @@ for (i in a) {
 ## Defining functions
 
 By using `function` command we can define our own functions in R. For
-instance, lets define function \(\Delta = b^2 - 4ac\) and find the
-solution for \(a = 2\), \(b = 3\) and \(c = 4\):
+instance, lets define function $`\Delta = b^2 - 4ac`$ and find the
+solution for $`a = 2`$, $`b = 3`$ and $`c = 4`$:
 
 ``` r
 # Delta
@@ -498,30 +497,30 @@ functions to install and import packages in RStudio. Knowing packages in
 R is a very important topic, some of packages that I am using are
 include:
 
-  - Documentation: `rmarkdown`, `kintr`, `kableExtra`
-  - Web application: `shiny`
-  - Plot: `lattice`, `ggplot2`
-  - GIS: `sf`, `maps`, `leaflet`
-  - Bayesian analysis: `R2OpenBUGS`, `RStan` (need openBUGS and Stan)
-  - Interface to Python: `reticulate`
-  - JSON objects: `rjson`
-  - Statistical learning:
-      - Linear/quadratic discriminant analysis (LDA/QDA): `MASS`
-      - k-nearest neighbors (KNN): `class`
-      - Bootstrapping: `boot`
-      - Ridge and LASSO: `glmnet`
-      - Principal components regression (PCR) and Partial Least Squares
-        (PLS): `pls`
-      - Spline: `splines`
-      - Generalized additive models (GAM): `gam`
-      - Gradient Boosting Machines (GBM): `gbm`
-      - tree, Random forest and bagging: `tree`, `randomForest`
-      - Support Vector Machine (SVM): `e1071`
-      - Linear, non-Linear and generalized mixed-effects models: `lme4`,
-        `nlme`, `MASS`
-      - Profile analysis of multivariate data: `profileR`
-      - Panel regression: `plm`, `splm`
+- Documentation: `rmarkdown`, `kintr`, `kableExtra`
+- Web application: `shiny`
+- Plot: `lattice`, `ggplot2`
+- GIS: `sf`, `maps`, `leaflet`
+- Bayesian analysis: `R2OpenBUGS`, `RStan` (need openBUGS and Stan)
+- Interface to Python: `reticulate`
+- JSON objects: `rjson`
+- Statistical learning:
+  - Linear/quadratic discriminant analysis (LDA/QDA): `MASS`
+  - k-nearest neighbors (KNN): `class`
+  - Bootstrapping: `boot`
+  - Ridge and LASSO: `glmnet`
+  - Principal components regression (PCR) and Partial Least Squares
+    (PLS): `pls`
+  - Spline: `splines`
+  - Generalized additive models (GAM): `gam`
+  - Gradient Boosting Machines (GBM): `gbm`
+  - tree, Random forest and bagging: `tree`, `randomForest`
+  - Support Vector Machine (SVM): `e1071`
+  - Linear, non-Linear and generalized mixed-effects models: `lme4`,
+    `nlme`, `MASS`
+  - Profile analysis of multivariate data: `profileR`
+  - Panel regression: `plm`, `splm`
 
 ---
 
-Copyright 2018-2021, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
+Copyright, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)

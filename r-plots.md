@@ -1,5 +1,4 @@
 # Basic graphics in R
-*[Ashkan Mirzaee](https://ashki23.github.io/index.html)*
 
 [R](https://www.r-project.org/) is a great tool for creating plots, maps
 and graphics. R includes many built-in graphics functions that would
@@ -8,78 +7,78 @@ terms of documentation.
 
 You may find more about R programming in:
 
-  - [A gentle introduction to R](r-intro.html)
-  - [Helpful functions in R](r-functions.html)
-  - [Programming with
-    R](http://swcarpentry.github.io/r-novice-inflammation/)
-  - [R for Reproducible Scientific
-    Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+- [A gentle introduction to R](r-intro.html)
+- [Helpful functions in R](r-functions.html)
+- [Programming with
+  R](http://swcarpentry.github.io/r-novice-inflammation/)
+- [R for Reproducible Scientific
+  Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
 
------
+------------------------------------------------------------------------
 
 ## Functions
 
 The following is a list of the most practical graphics functions in R:
 
-  - `plot`: Generic function for plotting of R objects
-  - `lines`: A generic function taking coordinates and joining the
-    corresponding points with line segments
-  - `ablines`: This function adds one or more straight lines through the
-    current plot
-  - `points`: A generic function to draw a sequence of points at the
-    specified coordinates
-  - `panel.smooth`: Simple panel plot
-  - `smoothScatter`: Produce a smoothed color density representation of
-    a scatterplot,
-  - `pairs`: Produce a matrix of scatter plots
-  - `hist`: Computes a histogram of the given data values
-  - `acf`: Computes (and by default plots) estimates of the
-    autocorrelation function
-  - `boxplot`: Produce box-and-whisker plot(s) of the given (grouped)
-    values
-  - `barplot`: Creates a bar plot with vertical or horizontal bars
-  - `dotchart`: Draw a Cleveland dot plot
-  - `pie`: Draw a pie chart
-  - `polygon`: Polygon draws the polygons whose vertices are given in x
-    and y
-  - `symbols`: This function draws symbols on a plot
-  - `arrows`: Add arrows to a plot
-  - `axis`: Add an axis to a plot
-  - `stars`: Draw star (segment) plots and spider (radar) plots
-  - `contour`: Create a contour plot, or add contour lines to an
-    existing plot
-  - `image`: Creates a grid of colored or gray-scale rectangles with
-    colors corresponding to the values in z
-  - `persp`: This function draws perspective plots of a surface over the
-    x–y plane
+- `plot`: Generic function for plotting of R objects
+- `lines`: A generic function taking coordinates and joining the
+  corresponding points with line segments
+- `ablines`: This function adds one or more straight lines through the
+  current plot
+- `points`: A generic function to draw a sequence of points at the
+  specified coordinates
+- `panel.smooth`: Simple panel plot
+- `smoothScatter`: Produce a smoothed color density representation of a
+  scatterplot,
+- `pairs`: Produce a matrix of scatter plots
+- `hist`: Computes a histogram of the given data values
+- `acf`: Computes (and by default plots) estimates of the
+  autocorrelation function
+- `boxplot`: Produce box-and-whisker plot(s) of the given (grouped)
+  values
+- `barplot`: Creates a bar plot with vertical or horizontal bars
+- `dotchart`: Draw a Cleveland dot plot
+- `pie`: Draw a pie chart
+- `polygon`: Polygon draws the polygons whose vertices are given in x
+  and y
+- `symbols`: This function draws symbols on a plot
+- `arrows`: Add arrows to a plot
+- `axis`: Add an axis to a plot
+- `stars`: Draw star (segment) plots and spider (radar) plots
+- `contour`: Create a contour plot, or add contour lines to an existing
+  plot
+- `image`: Creates a grid of colored or gray-scale rectangles with
+  colors corresponding to the values in z
+- `persp`: This function draws perspective plots of a surface over the
+  x–y plane
 
 There are several graphical parameters that can be specified in the
 graphics functions or through parameter function, `par()`, before the
 graphs. Most important graphical parameters:
 
-  - `ann`: Plots annotations which is axis titles and overall titles,
-    `ann = FALSE` means no titles
-  - `bg`: Background color
-  - `bty`: Border type, `bty = "n"` means border type is NULL
-  - `cex`: A value giving the amount which plotting text and symbols
-    should be magnified relative to the default
-  - `las`: Labels axis style
-  - `lty`: Lines types
-  - `lwd`: Lines width
-  - `main`: Plot main title
-  - `mfrow`: Multiple figures in rows, it is a vector of the form
-    `c(nr,nc)`
-  - `pch`: Points character
-  - `xaxt/yaxt`: X-axis/y-axis style, `xaxt = "n"` means no scale on
-    x-axis
-  - `xlab/ylab`: X-axis/y-axis label
-  - `xlim/ylim`: X-axis/y-axis limit
+- `ann`: Plots annotations which is axis titles and overall titles,
+  `ann = FALSE` means no titles
+- `bg`: Background color
+- `bty`: Border type, `bty = "n"` means border type is NULL
+- `cex`: A value giving the amount which plotting text and symbols
+  should be magnified relative to the default
+- `las`: Labels axis style
+- `lty`: Lines types
+- `lwd`: Lines width
+- `main`: Plot main title
+- `mfrow`: Multiple figures in rows, it is a vector of the form
+  `c(nr,nc)`
+- `pch`: Points character
+- `xaxt/yaxt`: X-axis/y-axis style, `xaxt = "n"` means no scale on
+  x-axis
+- `xlab/ylab`: X-axis/y-axis label
+- `xlim/ylim`: X-axis/y-axis limit
 
 This tutorial shows how to apply above functions and parameters to draw
 graphs by R. We will also, briefly learn how to generate publication
 style tables and maps.
 
------
+------------------------------------------------------------------------
 
 ## Scatter plots, lines and points
 
@@ -105,7 +104,6 @@ text(x = c(40,80), y = c(-1.2,3.2), labels = c("MIN","MAX"), pos = c(1,3), col =
 <p align="center">
 
 <img src="images/r-plots/chunk-2-1.png" alt="Scatter plots" style="width: 75%; border: 0;">
-
 </p>
 
 ## Probability density functions
@@ -126,7 +124,6 @@ legend("topleft", legend = c("Line 1", "Line 2"), title = "Line types", lty = 1:
 <p align="center">
 
 <img src="images/r-plots/chunk-3-1.png" alt="Probability density functions" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -146,7 +143,6 @@ polygon(c(2, seq[seq >= 2]), c(0, f[seq >= 2]), density = NA, col="green", borde
 <p align="center">
 
 <img src="images/r-plots/chunk-3-2.png" alt="Probability density functions" style="width: 75%; border: 0;">
-
 </p>
 
 ## Histograms
@@ -165,7 +161,6 @@ lines(seq, f, col = "blue", lty = 1, lwd = 2)
 <p align="center">
 
 <img src="images/r-plots/chunk-4-1.png" alt="Histograms" style="width: 75%; border: 0;">
-
 </p>
 
 ## Box plots and autocorrelations
@@ -184,7 +179,6 @@ acf(y, main = "")
 <p align="center">
 
 <img src="images/r-plots/chunk-5-1.png" alt="Box plots" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -194,7 +188,6 @@ boxplot(count ~ spray, data = InsectSprays, ylab = "Number of var", col = cm.col
 <p align="center">
 
 <img src="images/r-plots/chunk-6-1.png" alt="Box plots" style="width: 75%; border: 0;">
-
 </p>
 
 ## Barplots and dotcharts
@@ -208,7 +201,6 @@ legend("topright", legend = c("Group 1", "Group 2", "Group 3", "Group 4", "Group
 <p align="center">
 
 <img src="images/r-plots/chunk-7-1.png" alt="Barplots" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -223,7 +215,6 @@ legend("top", c("US","World"), fill = gray.colors(2), horiz = TRUE, bty = "n")
 <p align="center">
 
 <img src="images/r-plots/chunk-8-1.png" alt="Barplots" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -233,7 +224,6 @@ dotchart(VADeaths, main = "Death Rates in Virginia1940")
 <p align="center">
 
 <img src="images/r-plots/chunk-8-2.png" alt="Dotchart" style="width: 75%; border: 0;">
-
 </p>
 
 ## Matrix of scatter plots
@@ -245,7 +235,6 @@ pairs(iris[1:4], lower.panel = panel.smooth, upper.panel = NULL, cex = 0.75, cex
 <p align="center">
 
 <img src="images/r-plots/chunk-9-1.png" alt="Matrix of scatter plots" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -255,7 +244,6 @@ pairs(~Sepal.Length + Petal.Length + Species, data = iris, subset = iris$Sepal.L
 <p align="center">
 
 <img src="images/r-plots/chunk-9-2.png" alt="Matrix of scatter plots" style="width: 75%; border: 0;">
-
 </p>
 
 ## Hierarchical clustering
@@ -268,7 +256,6 @@ plot(hca, main = "Distance between European Cities", hang = -1, ylab = "")
 <p align="center">
 
 <img src="images/r-plots/chunk-10-1.png" alt="Scatter plots" style="width: 75%; border: 0;">
-
 </p>
 
 ## Time series
@@ -281,12 +268,11 @@ plot(ts_data, main = "Time series")
 <p align="center">
 
 <img src="images/r-plots/chunk-11-1.png" alt="Time series" style="width: 75%; border: 0;">
-
 </p>
 
 ## Draw functions
 
-For instance we can draw \(y = 4sin(x) + (1 - cos(x))\) by:
+For instance we can draw $`y = 4sin(x) + (1 - cos(x))`$ by:
 
 ``` r
 f = function(x) {
@@ -306,7 +292,6 @@ lines(x = seq_ + 0.5, y = a, col = "blue")
 <p align="center">
 
 <img src="images/r-plots/chunk-12-1.png" alt="Sin function" style="width: 75%; border: 0;">
-
 </p>
 
 For another example let’s draw a Ergodic mean plots:
@@ -330,7 +315,6 @@ ErgodicMean(y, 100)
 <p align="center">
 
 <img src="images/r-plots/chunk-13-1.png" alt="Ergodic plot" style="width: 75%; border: 0;">
-
 </p>
 
 ## Symbols and stars
@@ -344,7 +328,6 @@ symbols(c(0,6), c(8,2), squares = c(4,4), inches = FALSE, bg = c("blue", "blue")
 <p align="center">
 
 <img src="images/r-plots/chunk-14-1.png" alt="Symbols" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -354,7 +337,6 @@ stars(mtcars[, 1:7], len = 0.8, key.loc = c(12, 1.5), main = "Motor Trend Cars",
 <p align="center">
 
 <img src="images/r-plots/chunk-15-1.png" alt="Stars" style="width: 75%; border: 0;">
-
 </p>
 
 ## Contour, image and perspective
@@ -372,7 +354,6 @@ for(f in pi^(0:3)){
 <p align="center">
 
 <img src="images/r-plots/chunk-16-1.png" alt="Conture" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -384,7 +365,6 @@ image(x, y, z)
 <p align="center">
 
 <img src="images/r-plots/chunk-17-1.png" alt="Image plot" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -398,7 +378,6 @@ persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = "lightblue")
 <p align="center">
 
 <img src="images/r-plots/chunk-17-2.png" alt="Perspective plot" style="width: 75%; border: 0;">
-
 </p>
 
 ## Tables
@@ -409,9 +388,9 @@ outputs are usually not formatted for including in reports. While
 building Markdown or Latex reports it will be useful to use the
 following packages to make them more publication quality:
 
-  - [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
-  - [xtable](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
-  - [stargazer](https://www.jakeruss.com/cheatsheets/stargazer/)
+- [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
+- [xtable](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
+- [stargazer](https://www.jakeruss.com/cheatsheets/stargazer/)
 
 For example:
 
@@ -438,67 +417,56 @@ kable(head(cardata), format = "html", caption = "Title of the table") %>%
 <th style="text-align:right;">
 
 mpg
-
 </th>
 
 <th style="text-align:right;">
 
 cyl
-
 </th>
 
 <th style="text-align:right;">
 
 disp
-
 </th>
 
 <th style="text-align:right;">
 
 hp
-
 </th>
 
 <th style="text-align:right;">
 
 drat
-
 </th>
 
 <th style="text-align:right;">
 
 wt
-
 </th>
 
 <th style="text-align:right;">
 
 qsec
-
 </th>
 
 <th style="text-align:right;">
 
 vs
-
 </th>
 
 <th style="text-align:right;">
 
 am
-
 </th>
 
 <th style="text-align:right;">
 
 gear
-
 </th>
 
 <th style="text-align:right;">
 
 carb
-
 </th>
 
 </tr>
@@ -512,73 +480,61 @@ carb
 <td style="text-align:left;">
 
 Mazda RX4
-
 </td>
 
 <td style="text-align:right;">
 
 21.0
-
 </td>
 
 <td style="text-align:right;">
 
 6
-
 </td>
 
 <td style="text-align:right;">
 
 160
-
 </td>
 
 <td style="text-align:right;">
 
 110
-
 </td>
 
 <td style="text-align:right;">
 
 3.90
-
 </td>
 
 <td style="text-align:right;">
 
 2.620
-
 </td>
 
 <td style="text-align:right;">
 
 16.46
-
 </td>
 
 <td style="text-align:right;">
 
 0
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 <td style="text-align:right;">
 
 4
-
 </td>
 
 <td style="text-align:right;">
 
 4
-
 </td>
 
 </tr>
@@ -588,73 +544,61 @@ Mazda RX4
 <td style="text-align:left;">
 
 Mazda RX4 Wag
-
 </td>
 
 <td style="text-align:right;">
 
 21.0
-
 </td>
 
 <td style="text-align:right;">
 
 6
-
 </td>
 
 <td style="text-align:right;">
 
 160
-
 </td>
 
 <td style="text-align:right;">
 
 110
-
 </td>
 
 <td style="text-align:right;">
 
 3.90
-
 </td>
 
 <td style="text-align:right;">
 
 2.875
-
 </td>
 
 <td style="text-align:right;">
 
 17.02
-
 </td>
 
 <td style="text-align:right;">
 
 0
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 <td style="text-align:right;">
 
 4
-
 </td>
 
 <td style="text-align:right;">
 
 4
-
 </td>
 
 </tr>
@@ -664,73 +608,61 @@ Mazda RX4 Wag
 <td style="text-align:left;">
 
 Datsun 710
-
 </td>
 
 <td style="text-align:right;">
 
 22.8
-
 </td>
 
 <td style="text-align:right;">
 
 4
-
 </td>
 
 <td style="text-align:right;">
 
 108
-
 </td>
 
 <td style="text-align:right;">
 
 93
-
 </td>
 
 <td style="text-align:right;">
 
 3.85
-
 </td>
 
 <td style="text-align:right;">
 
 2.320
-
 </td>
 
 <td style="text-align:right;">
 
 18.61
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 <td style="text-align:right;">
 
 4
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 </tr>
@@ -740,73 +672,61 @@ Datsun 710
 <td style="text-align:left;">
 
 Hornet 4 Drive
-
 </td>
 
 <td style="text-align:right;">
 
 21.4
-
 </td>
 
 <td style="text-align:right;">
 
 6
-
 </td>
 
 <td style="text-align:right;">
 
 258
-
 </td>
 
 <td style="text-align:right;">
 
 110
-
 </td>
 
 <td style="text-align:right;">
 
 3.08
-
 </td>
 
 <td style="text-align:right;">
 
 3.215
-
 </td>
 
 <td style="text-align:right;">
 
 19.44
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 <td style="text-align:right;">
 
 0
-
 </td>
 
 <td style="text-align:right;">
 
 3
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 </tr>
@@ -816,73 +736,61 @@ Hornet 4 Drive
 <td style="text-align:left;">
 
 Hornet Sportabout
-
 </td>
 
 <td style="text-align:right;">
 
 18.7
-
 </td>
 
 <td style="text-align:right;">
 
 8
-
 </td>
 
 <td style="text-align:right;">
 
 360
-
 </td>
 
 <td style="text-align:right;">
 
 175
-
 </td>
 
 <td style="text-align:right;">
 
 3.15
-
 </td>
 
 <td style="text-align:right;">
 
 3.440
-
 </td>
 
 <td style="text-align:right;">
 
 17.02
-
 </td>
 
 <td style="text-align:right;">
 
 0
-
 </td>
 
 <td style="text-align:right;">
 
 0
-
 </td>
 
 <td style="text-align:right;">
 
 3
-
 </td>
 
 <td style="text-align:right;">
 
 2
-
 </td>
 
 </tr>
@@ -892,73 +800,61 @@ Hornet Sportabout
 <td style="text-align:left;">
 
 Valiant
-
 </td>
 
 <td style="text-align:right;">
 
 18.1
-
 </td>
 
 <td style="text-align:right;">
 
 6
-
 </td>
 
 <td style="text-align:right;">
 
 225
-
 </td>
 
 <td style="text-align:right;">
 
 105
-
 </td>
 
 <td style="text-align:right;">
 
 2.76
-
 </td>
 
 <td style="text-align:right;">
 
 3.460
-
 </td>
 
 <td style="text-align:right;">
 
 20.22
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 <td style="text-align:right;">
 
 0
-
 </td>
 
 <td style="text-align:right;">
 
 3
-
 </td>
 
 <td style="text-align:right;">
 
 1
-
 </td>
 
 </tr>
@@ -996,25 +892,21 @@ kable(sm, "html", escape = F) %>%
 <th style="text-align:left;">
 
 Estimate
-
 </th>
 
 <th style="text-align:left;">
 
 Std. Error
-
 </th>
 
 <th style="text-align:left;">
 
 t value
-
 </th>
 
 <th style="text-align:left;">
 
-Pr(\>|t|)
-
+Pr(\>\|t\|)
 </th>
 
 </tr>
@@ -1028,31 +920,26 @@ Pr(\>|t|)
 <td style="text-align:left;">
 
 <span style="font-weight: bold;">(Intercept)</span>
-
 </td>
 
 <td style="text-align:left;">
 
 34.185
-
 </td>
 
 <td style="text-align:left;">
 
 2.591
-
 </td>
 
 <td style="text-align:left;">
 
 13.195
-
 </td>
 
 <td style="text-align:left;">
 
 <span style="color: red !important;">0</span>
-
 </td>
 
 </tr>
@@ -1062,31 +949,26 @@ Pr(\>|t|)
 <td style="text-align:left;">
 
 <span style="font-weight: bold;">cyl</span>
-
 </td>
 
 <td style="text-align:left;">
 
-\-1.227
-
+-1.227
 </td>
 
 <td style="text-align:left;">
 
 0.797
-
 </td>
 
 <td style="text-align:left;">
 
-\-1.54
-
+-1.54
 </td>
 
 <td style="text-align:left;">
 
 <span style="color: black !important;">0.135</span>
-
 </td>
 
 </tr>
@@ -1096,31 +978,26 @@ Pr(\>|t|)
 <td style="text-align:left;">
 
 <span style="font-weight: bold;">disp</span>
-
 </td>
 
 <td style="text-align:left;">
 
-\-0.019
-
+-0.019
 </td>
 
 <td style="text-align:left;">
 
 0.01
-
 </td>
 
 <td style="text-align:left;">
 
-\-1.811
-
+-1.811
 </td>
 
 <td style="text-align:left;">
 
 <span style="color: red !important;">0.081</span>
-
 </td>
 
 </tr>
@@ -1130,31 +1007,26 @@ Pr(\>|t|)
 <td style="text-align:left;">
 
 <span style="font-weight: bold;">hp</span>
-
 </td>
 
 <td style="text-align:left;">
 
-\-0.015
-
+-0.015
 </td>
 
 <td style="text-align:left;">
 
 0.015
-
 </td>
 
 <td style="text-align:left;">
 
-\-1.002
-
+-1.002
 </td>
 
 <td style="text-align:left;">
 
 <span style="color: black !important;">0.325</span>
-
 </td>
 
 </tr>
@@ -1170,17 +1042,17 @@ Pr(\>|t|)
 R does not have default functions for drawing maps and shapefiles. To
 generate maps, we can use the following packages:
 
-  - [maps](https://cran.r-project.org/web/packages/maps/maps.pdf): draw
-    lines and polygons as specified by a map database
-  - [sf](https://r-spatial.github.io/sf/): provide [Simple
-    Features](https://r-spatial.github.io/sf/articles/sf1.html) for R.
-    Find more details about *sf* in
-    [here](https://r-spatial.github.io/sf/articles/sf5.html) and in the
-    [cheetsheet](https://github.com/rstudio/cheatsheets/blob/master/sf.pdf)
-  - [leaflet](https://rstudio.github.io/leaflet/): create interactive
-    maps. The widget can be rendered on HTML pages generated from R
-    Markdown, Shiny, or other applications. You may learn more about
-    *leaflet* in [here](https://rpubs.com/mattdray/basic-leaflet-maps)
+- [maps](https://cran.r-project.org/web/packages/maps/maps.pdf): draw
+  lines and polygons as specified by a map database
+- [sf](https://r-spatial.github.io/sf/): provide [Simple
+  Features](https://r-spatial.github.io/sf/articles/sf1.html) for R.
+  Find more details about *sf* in
+  [here](https://r-spatial.github.io/sf/articles/sf5.html) and in the
+  [cheetsheet](https://github.com/rstudio/cheatsheets/blob/master/sf.pdf)
+- [leaflet](https://rstudio.github.io/leaflet/): create interactive
+  maps. The widget can be rendered on HTML pages generated from R
+  Markdown, Shiny, or other applications. You may learn more about
+  *leaflet* in [here](https://rpubs.com/mattdray/basic-leaflet-maps)
 
 ## Layout
 
@@ -1196,7 +1068,6 @@ layout.show(lay)
 <p align="center">
 
 <img src="images/r-plots/chunk-19-1.png" alt="Layout" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -1225,7 +1096,6 @@ legend("center", legend = c("Top", "Middle", "Right"), fill = c("gray", "white",
 <p align="center">
 
 <img src="images/r-plots/chunk-19-2.png" alt="Plot with a layout" style="width: 75%; border: 0;">
-
 </p>
 
 ## Color palettes
@@ -1233,15 +1103,13 @@ legend("center", legend = c("Top", "Middle", "Right"), fill = c("gray", "white",
 R also offers the following built in color palettes that help to
 generate color vectors of desired length quickly.
 
-  - `rainbow()`
-  - `colorRampPalette()`
-  - `heat.colors()`
-  - `gray.colors()`
-  - `terrain.colors()`
-  - `topo.colors()`
-  - `cm.colors()`
-
-<!-- end list -->
+- `rainbow()`
+- `colorRampPalette()`
+- `heat.colors()`
+- `gray.colors()`
+- `terrain.colors()`
+- `topo.colors()`
+- `cm.colors()`
 
 ``` r
 par(mfrow = c(1,2))
@@ -1252,7 +1120,6 @@ pie(rep(1, 24), col = colorRampPalette(c("red","yellow","springgreen","royalblue
 <p align="center">
 
 <img src="images/r-plots/chunk-20-1.png" alt="Rainbow/colorRampPalette" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -1263,7 +1130,6 @@ pie(rep(1, 24), col = terrain.colors(24), radius = 1)
 <p align="center">
 
 <img src="images/r-plots/chunk-20-2.png" alt="Heat/terrain" style="width: 75%; border: 0;">
-
 </p>
 
 ``` r
@@ -1274,9 +1140,8 @@ pie(rep(1, 24), col = cm.colors(24), radius = 1)
 <p align="center">
 
 <img src="images/r-plots/chunk-20-3.png" alt="Topo/cm" style="width: 75%; border: 0;">
-
 </p>
 
 ---
 
-Copyright 2018-2021, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
+Copyright, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)

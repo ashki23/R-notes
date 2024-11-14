@@ -1,5 +1,4 @@
 # Helpful functions in R
-*[Ashkan Mirzaee](https://ashki23.github.io/index.html)*
 
 [R](https://www.r-project.org/) is a powerful tool for statistical
 learning, data analysis and graphics that includes numerous built-in
@@ -11,31 +10,31 @@ summary statistics and regular expressions.
 
 As a prerequisite, first review the following article:
 
-  - [A gentle introduction to R](r-intro.html)
+- [A gentle introduction to R](r-intro.html)
 
 The following are also more resources to learn R programming:
 
-  - [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
-  - [Programming with
-    R](http://swcarpentry.github.io/r-novice-inflammation/)
-  - [R for Reproducible Scientific
-    Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
-  - [A gentle introduction to R](r-intro.html)
-  - [Basic graphics in R](r-plots.html)
+- [R Tutorial](http://www.cyclismo.org/tutorial/R/index.html)
+- [Programming with
+  R](http://swcarpentry.github.io/r-novice-inflammation/)
+- [R for Reproducible Scientific
+  Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+- [A gentle introduction to R](r-intro.html)
+- [Basic graphics in R](r-plots.html)
 
------
+------------------------------------------------------------------------
 
 ## Shell-like commands
 
-  - List of objects: `ls()`
-  - Remove an object: `rm(object)`
-  - Remove all objects: `rm(list = ls())`
-  - List the files in a directory: `dir()`, `dir(path, pattern)`
-  - Get working directory: `getwd()`
-  - Set working directory: `setwd("path")`
-  - Get environmental variables: `Sys.getenv("ENV")`
-  - Set environmental variables: `Sys.setenv(ENV = "path")`
-  - Running shell commands: `system("command", intern = TRUE)`
+- List of objects: `ls()`
+- Remove an object: `rm(object)`
+- Remove all objects: `rm(list = ls())`
+- List the files in a directory: `dir()`, `dir(path, pattern)`
+- Get working directory: `getwd()`
+- Set working directory: `setwd("path")`
+- Get environmental variables: `Sys.getenv("ENV")`
+- Set environmental variables: `Sys.setenv(ENV = "path")`
+- Running shell commands: `system("command", intern = TRUE)`
 
 ## Statistical functions
 
@@ -43,34 +42,33 @@ R is one of the best application statistical analysis and natively
 supports many advanced statistical methods. The following show some of
 these functions:
 
-  - Basic stats: `mean`, `median`, `sd`, `var`, `cov`, `cor`, `quantile`
-  - Probability functions
-      - Density functions (ddist): `dnorm`, `dchisq`, `dt`, `df`
-      - Cumulative distribution functions (pdist): `pgamma`, `pbeta`,
-        `pexp`
-      - Quantile functions (qdist): `qpois`, `qunif`, `qbinom`
-      - Random numbers (rdist) : `runif`, `rlogis`, `rlnorm`
-  - Regression analysis
-      - Linear models: `lm`
-      - Generalized linear models: `glm`
-      - Nonlinear models: `nls`
-  - Analysis of varience: `anova`
-  - Multivariate aalysis of varience: `manova`
-  - Confidence intervals: `confint`
-  - t-test: `t.test`
-  - principal components: `prcomp`
+- Basic stats: `mean`, `median`, `sd`, `var`, `cov`, `cor`, `quantile`
+- Probability functions
+  - Density functions (ddist): `dnorm`, `dchisq`, `dt`, `df`
+  - Cumulative distribution functions (pdist): `pgamma`, `pbeta`, `pexp`
+  - Quantile functions (qdist): `qpois`, `qunif`, `qbinom`
+  - Random numbers (rdist) : `runif`, `rlogis`, `rlnorm`
+- Regression analysis
+  - Linear models: `lm`
+  - Generalized linear models: `glm`
+  - Nonlinear models: `nls`
+- Analysis of varience: `anova`
+- Multivariate aalysis of varience: `manova`
+- Confidence intervals: `confint`
+- t-test: `t.test`
+- principal components: `prcomp`
 
 ## Computational functions
 
 R provides an abundance of computational functions, such as:
 
-  - Counting: `nrow`, `ncol`, `length`
-  - Ordinal and sequential: `sort`, `order`, `seq`
-  - Cumulative: `cumsum`, `cumprod`, `colSums`, `rowSums`
-  - Finding min/mix: `which.min`, `which.max`
-  - Mapping: `apply`
-  - Normalizing: `scale`
-  - Sampling: `sample`
+- Counting: `nrow`, `ncol`, `length`
+- Ordinal and sequential: `sort`, `order`, `seq`
+- Cumulative: `cumsum`, `cumprod`, `colSums`, `rowSums`
+- Finding min/mix: `which.min`, `which.max`
+- Mapping: `apply`
+- Normalizing: `scale`
+- Sampling: `sample`
 
 The following are some examples of these functions:
 
@@ -123,19 +121,19 @@ scale(mydata) # scale(x) = (x - mean(x)) / sd(x)
 
 The most common matrix operations include:
 
-  - Dimensions of a matrix: `dim`
-  - Diagonal of a matrix: `diag`
-  - Identity matrix: `diag(number)`
-  - Matrix diagonal: `Diagonal`
-  - Matrix symmetric test: `isSymmetric`
-  - Matrix multiplication: `%*%`
-  - Test matrices for exact equality: `identical`
-  - Matrix transpose: `t`
-  - Determinant of a matrix: `det`
-  - Inverse of a matrix: `solve`
-  - Solve a system of equations: `solve`
-  - QR Decomposition of a Matrix: `qr`
-  - Spectral Decomposition of a Matrix: `eigen`
+- Dimensions of a matrix: `dim`
+- Diagonal of a matrix: `diag`
+- Identity matrix: `diag(number)`
+- Matrix diagonal: `Diagonal`
+- Matrix symmetric test: `isSymmetric`
+- Matrix multiplication: `%*%`
+- Test matrices for exact equality: `identical`
+- Matrix transpose: `t`
+- Determinant of a matrix: `det`
+- Inverse of a matrix: `solve`
+- Solve a system of equations: `solve`
+- QR Decomposition of a Matrix: `qr`
+- Spectral Decomposition of a Matrix: `eigen`
 
 The following are some examples of above functions.
 
@@ -230,8 +228,8 @@ eigen(M)
 
 R base system supports both differentiation and integration with:
 
-  - Derivative: `D(function, "wrt")`
-  - Integrate: `integrate(function, lower, upper)`
+- Derivative: `D(function, "wrt")`
+- Integrate: `integrate(function, lower, upper)`
 
 For instance:
 
@@ -259,14 +257,14 @@ integrate(f, lower = 0, upper = 1)
 
 There are several functions to work with date and time classes such as:
 
-  - Current time and data: `Sys.time`, `Sys.Date`, `timestamp`
-  - Date information: `weekdays`, `month`, `quarters`
-  - Time formats: `%a %b %d %Y %X %H %M %S`. Use `help(strftime)` to see
-    all formats
-  - Time difference: `difftime`
-  - Time sequences: `seq`
-  - Date-time conversion: `strftime`
-  - Time-series: `ts`
+- Current time and data: `Sys.time`, `Sys.Date`, `timestamp`
+- Date information: `weekdays`, `month`, `quarters`
+- Time formats: `%a %b %d %Y %X %H %M %S`. Use `help(strftime)` to see
+  all formats
+- Time difference: `difftime`
+- Time sequences: `seq`
+- Date-time conversion: `strftime`
+- Time-series: `ts`
 
 For example:
 
@@ -397,12 +395,10 @@ symnum(cor(mtcars))
 function merge two data frames by common columns or row names. `merge`
 is similar to `JOIN` in SQL:
 
-  - Inner join: `merge(x, y, by)`
-  - Left join: `merge(x, y, by, all.x = T)`
-  - Right join: `merge(x, y, by, all.y = T)`
-  - Outer join: `merge(x, y, by, all = T)`
-
-<!-- end list -->
+- Inner join: `merge(x, y, by)`
+- Left join: `merge(x, y, by, all.x = T)`
+- Right join: `merge(x, y, by, all.y = T)`
+- Outer join: `merge(x, y, by, all = T)`
 
 ``` r
 data = expand.grid(meat = c("grade-1","grade-2","grade-3"), food = c("burger", "steak", "pizza"))
@@ -534,4 +530,4 @@ list.files(path = "./doc", pattern = "*.pdf$") # List of "pdf" files in "doc" di
 
 ---
 
-Copyright 2018-2021, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
+Copyright, [Ashkan Mirzaee](https://ashki23.github.io/index.html) | Content is available under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Sourcecode licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
